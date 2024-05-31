@@ -13,17 +13,17 @@
     - **Prototype**
 
       ```ts
-      interface   t_style
+      interface   i_style
       {
-          bg    ?: string|number[],
-          fg    ?: string|number[],
-          attr  ?: string|string[],
+          bg              ?: t_color, // string | [r,g,b];
+          fg              ?: t_color, // ..
+          attr            ?: t_attr,  // string | string[]
       }
       ```
 
       ```ts
       const       style
-      = (str: string, options: t_style)
+      = (str: string, options: i_style)
       : string
       ```
 

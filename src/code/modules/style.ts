@@ -7,27 +7,30 @@
 /* ---------------------------------------- PACK ----------------------------------------  */
 
     import * as codes                       from '../json/codes.json';
+    export                                  { codes };
 
 /* ---------------------------------------- ---- ----------------------------------------  */
 
 
 /* ---------------------------------------- TYPE ----------------------------------------  */
 
-    /**
-     * Options for the style function.
-     *
-     * @param {string|number[]} fg              - The foreground color style to apply.
-     * @param {string|number[]} bg              - The background color style to apply.
-     * @param {string|string[]} attr            - The attribute style to apply.
-    */
-    export interface t_style
-    {
-        bg              ?: string|number[],
-        fg              ?: string|number[],
-        attr            ?: string|string[],
-    }
+    export type         t_rgb =
+    [
+        r               : number,
+        g               : number,
+        b               : number,
+    ];
 
-    export { codes };
+    export type         t_color = string|t_rgb;
+
+    export type         t_attr  = string|string[];
+
+    export interface    i_style
+    {
+        bg              ?: t_color,
+        fg              ?: t_color,
+        attr            ?: t_attr,
+    }
 
 /* ---------------------------------------- ---- ----------------------------------------  */
 
@@ -38,16 +41,16 @@
      * Applies styles to a given string.
      *
      * @param {string} str                      - The string to apply styles to.
-     * @param {t_style} options                 - The styles to apply.
-     * @param {string|number[]} options.fg      - The foreground color style to apply.
-     * @param {string|number[]} options.bg      - The background color style to apply.
+     * @param {i_style} options                 - The styles to apply.
+     * @param {string|t_rgb} options.fg      - The foreground color style to apply.
+     * @param {string|t_rgb} options.bg      - The background color style to apply.
      * @param {string|string[]} options.attr    - The attribute style to apply.
      *
      *
      * @return {string} The string with styles applied.
     */
     export const style
-    = (str: string, options: t_style)
+    = (str: string, options: i_style)
     : string =>
     {
         // res
@@ -119,7 +122,7 @@
          * @throws {Error} If the input is not a valid color name or RGB values.
          * @return {string} The ANSI escape code for the specified color.
         */
-        color: (ref: string | number[], _for: string = 'fg')
+        color: (ref: string | t_rgb, _for: string = 'fg')
         : string =>
         {
             const validColorTypes = ['fg', 'bg'];
