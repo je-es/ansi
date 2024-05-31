@@ -40,12 +40,11 @@
     /**
      * Applies styles to a given string.
      *
-     * @param {string} str                      - The string to apply styles to.
-     * @param {i_style} options                 - The styles to apply.
-     * @param {string|t_rgb} options.fg      - The foreground color style to apply.
-     * @param {string|t_rgb} options.bg      - The background color style to apply.
-     * @param {string|string[]} options.attr    - The attribute style to apply.
-     *
+     * @param {string} str - The string to apply styles to.
+     * @param {i_style} options - The styles to apply.
+     * @param {string|t_rgb} options.fg - The foreground color style to apply.
+     * @param {string|t_rgb} options.bg - The background color style to apply.
+     * @param {string|string[]} options.attr - The attribute style to apply.
      *
      * @return {string} The string with styles applied.
     */
@@ -97,11 +96,11 @@
     const Helpers =
     {
         /**
-         * Retrieves the ANSI escape code for the specified attribute.
+         * Retrieves the attribute style from the codes object based on the provided reference.
          *
-         * @param {string} ref - The name of the attribute.
-         * @throws {Error} If the input is not a string.
-         * @return {string|undefined} The ANSI escape code for the specified attribute, or undefined if the attribute is not found.
+         * @param {string} ref - The reference to the attribute style. Must be a string.
+         * @return {string | undefined} The attribute style corresponding to the reference, or undefined if not found.
+         * @throws {Error} If the reference is not a string.
         */
         attr: (ref: string)
         : string | undefined =>
@@ -115,12 +114,14 @@
         },
 
         /**
-         * Retrieves the ANSI escape code for the specified color.
+         * Applies a color style to the foreground or background of a string.
          *
-         * @param {string|Array<number>} ref - The color name or RGB values.
-         * @param {string} [_for='fg'] - The type of color ('fg' for foreground, 'bg' for background).
-         * @throws {Error} If the input is not a valid color name or RGB values.
-         * @return {string} The ANSI escape code for the specified color.
+         * @param {string | t_rgb} ref - The color reference to apply. Can be a string representing a color name or a hex code, or an array representing RGB values.
+         * @param {string} [_for='fg'] - The type of color to apply. Must be 'fg' for foreground or 'bg' for background. Defaults to 'fg'.
+         * @return {string} The ANSI escape code representing the color style.
+         * @throws {Error} If _for is not 'fg' or 'bg', or if ref is not a non-empty string or array[n,n,n].
+         * @throws {Error} If ref is a string and not a valid color name or hex code, or if ref is an array and not of length 3.
+         * @throws {Error} If ref is an array and any of the RGB values are not numbers between 0 and 255.
         */
         color: (ref: string | t_rgb, _for: string = 'fg')
         : string =>
