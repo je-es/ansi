@@ -33,7 +33,7 @@
       style('Hello World',
       {
           fg      : 'white',
-          bg      : 'black',
+          bg      : '#000000',
           attr    : ['bold', 'underline']
       })
       ```
