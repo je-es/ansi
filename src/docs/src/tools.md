@@ -6,6 +6,7 @@ import { <tool> } from '@je-es/ansi';
 
 | Tool                                      | Desc                                                                                         |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [createAnsiRegex](#createansiregex)       | Regular expression to handling ANSI escape codes.                                            |
 | [removecodess](#removecodess)             | Strips ANSI escape codes from a given string.                                                |
 | [calcLength](#calcLength)                 | Calculates the length of a string, optionally excluding the length of ANSI escape sequences. |
 | [calcStrippedLength](#calcStrippedLength) | Calculates the length of a string, excluding ANSI escape sequences.                          |
