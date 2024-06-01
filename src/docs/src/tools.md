@@ -4,12 +4,12 @@
 import { <tool> } from '@je-es/ansi';
 ```
 
-| Tool                                                | Desc                                                                                         |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [removecodess](#removecodess)                       | Strips ANSI escape codes from a given string.                                                |
-| [calculateLength](#calculatelength)                 | Calculates the length of a string, optionally excluding the length of ANSI escape sequences. |
-| [calculateStrippedLength](#calculatestrippedlength) | Calculates the length of a string, excluding ANSI escape sequences.                          |
-| [containscodess](#containscodess)                   | Check if the string contains ANSI escape codes.                                              |
+| Tool                                      | Desc                                                                                         |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [removecodess](#removecodess)             | Strips ANSI escape codes from a given string.                                                |
+| [calcLength](#calcLength)                 | Calculates the length of a string, optionally excluding the length of ANSI escape sequences. |
+| [calcStrippedLength](#calcStrippedLength) | Calculates the length of a string, excluding ANSI escape sequences.                          |
+| [hasAnsi](#hasAnsi)                       | Check if the string contains ANSI escape codes.                                              |
 
 ---
 
@@ -41,7 +41,7 @@ import { <tool> } from '@je-es/ansi';
     : string
     ```
 
-- #### calculateLength
+- #### calcLength
 
     ```ts
     /**
@@ -51,12 +51,12 @@ import { <tool> } from '@je-es/ansi';
      * @param {boolean} [excludeAnsi=false] - Whether to exclude the length of ANSI escape sequences.
      * @return {number} The length of the string, optionally excluding the length of ANSI escape sequences.
     */
-    const calculateLength
+    const calcLength
     = (str:string, excludeAnsi = false)
     : number
     ```
 
-- #### calculateStrippedLength
+- #### calcStrippedLength
 
     ```ts
     /**
@@ -65,12 +65,12 @@ import { <tool> } from '@je-es/ansi';
      * @param {string} str - The string to calculate the length of.
      * @return {number} The length of the string, excluding ANSI escape sequences.
     */
-    const calculateStrippedLength
+    const calcStrippedLength
     = (str:string)
     : number
     ```
 
-- #### containscodess
+- #### hasAnsi
 
     ```ts
     /**
@@ -79,7 +79,7 @@ import { <tool> } from '@je-es/ansi';
      * @param {string} str - The string to check.
      * @return {boolean} Whether the string contains ANSI escape codes.
     */
-    const containscodess
+    const hasAnsi
     = (str:string)
     : boolean
     ```

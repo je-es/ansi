@@ -39,47 +39,47 @@
         });
     });
 
-    describe("calculateLength", () =>
+    describe("calcLength", () =>
     {
         test("Should be defined !", () =>
         {
-            expect(ansi.calculateLength).toBeDefined();
+            expect(ansi.calcLength).toBeDefined();
         });
 
         test("Calculates the length of a string", () =>
         {
-            expect(ansi.calculateLength('\u001B[31mPlain !\u001B[0m')).toEqual(7);
+            expect(ansi.calcLength('\u001B[31mPlain !\u001B[0m')).toEqual(7);
         });
 
         test("Calculates the length of a string, excluding ANSI escape sequences", () =>
         {
-            expect(ansi.calculateLength('\u001B[31mPlain !\u001B[0m', true)).toEqual(9);
+            expect(ansi.calcLength('\u001B[31mPlain !\u001B[0m', true)).toEqual(9);
         });
     });
 
-    describe("calculateStrippedLength", () =>
+    describe("calcStrippedLength", () =>
     {
         test("Should be defined !", () =>
         {
-            expect(ansi.calculateStrippedLength).toBeDefined();
+            expect(ansi.calcStrippedLength).toBeDefined();
         });
 
         test("Calculates the length of a string, excluding ANSI escape sequences", () =>
         {
-            expect(ansi.calculateStrippedLength('\u001B[31mPlain !\u001B[0m')).toEqual(7);
+            expect(ansi.calcStrippedLength('\u001B[31mPlain !\u001B[0m')).toEqual(7);
         });
     });
 
-    describe("containscodess", () =>
+    describe("hasAnsi", () =>
     {
         test("Should be defined !", () =>
         {
-            expect(ansi.containscodess).toBeDefined();
+            expect(ansi.hasAnsi).toBeDefined();
         });
 
         test("Checks if the string contains ANSI escape codes", () =>
         {
-            expect(ansi.containscodess('\u001B[31mPlain !\u001B[0m')).toEqual(true);
+            expect(ansi.hasAnsi('\u001B[31mPlain !\u001B[0m')).toEqual(true);
         });
     });
 

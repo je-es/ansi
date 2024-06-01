@@ -56,16 +56,16 @@
      * @param {boolean} [excludeAnsi=false] - Whether to exclude the length of ANSI escape sequences.
      * @return {number} The length of the string, optionally excluding the length of ANSI escape sequences.
     */
-    export const calculateLength
+    export const calcLength
     = (str:string, excludeAnsi = false)
     : number =>
     {
         if (excludeAnsi)
         {
-            return str.length - calculateStrippedLength(str);
+            return str.length - calcStrippedLength(str);
         }
 
-        return calculateStrippedLength(str);
+        return calcStrippedLength(str);
     }
 
     /**
@@ -74,7 +74,7 @@
      * @param {string} str - The string to calculate the length of.
      * @return {number} The length of the string, excluding ANSI escape sequences.
     */
-    export const calculateStrippedLength
+    export const calcStrippedLength
     = (str:string)
     : number =>
     {
@@ -100,7 +100,7 @@
      * @param {string} str - The string to check.
      * @return {boolean} Whether the string contains ANSI escape codes.
     */
-    export const containscodess
+    export const hasAnsi
     = (str:string)
     : boolean =>
     {
