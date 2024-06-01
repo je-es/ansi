@@ -26,16 +26,16 @@
         });
     });
 
-    describe("removecodess", () =>
+    describe("removeAnsi", () =>
     {
         test("Should be defined !", () =>
         {
-            expect(ansi.removecodess).toBeDefined();
+            expect(ansi.removeAnsi).toBeDefined();
         });
 
         test("Removes ANSI escape codes", () =>
         {
-            expect(ansi.removecodess('\u001B[31mPlain !\u001B[0m')).toEqual('Plain !');
+            expect(ansi.removeAnsi('\u001B[31mPlain !\u001B[0m')).toEqual('Plain !');
         });
     });
 

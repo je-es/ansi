@@ -40,7 +40,7 @@
      * @param {string} str - The input string to strip ANSI escape codes from.
      * @return {string} The input string with ANSI escape codes removed.
     */
-    export const removecodess
+    export const removeAnsi
     = (str : string)
     : string =>
     {
@@ -81,7 +81,7 @@
         if (str === '')
         return 0;
 
-        str = removecodess(str);
+        str = removeAnsi(str);
 
         if (str === '')
         return 0;

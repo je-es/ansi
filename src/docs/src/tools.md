@@ -7,7 +7,7 @@ import { <tool> } from '@je-es/ansi';
 | Tool                                      | Desc                                                                                         |
 | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
 | [createAnsiRegex](#createansiregex)       | Regular expression to handling ANSI escape codes.                                            |
-| [removecodess](#removecodess)             | Strips ANSI escape codes from a given string.                                                |
+| [removeAnsi](#removeAnsi)             | Strips ANSI escape codes from a given string.                                                |
 | [calcLength](#calcLength)                 | Calculates the length of a string, optionally excluding the length of ANSI escape sequences. |
 | [calcStrippedLength](#calcStrippedLength) | Calculates the length of a string, excluding ANSI escape sequences.                          |
 | [hasAnsi](#hasAnsi)                       | Check if the string contains ANSI escape codes.                                              |
@@ -28,7 +28,7 @@ import { <tool> } from '@je-es/ansi';
     : RegExp
     ```
 
-- #### removecodess
+- #### removeAnsi
 
     ```ts
     /**
@@ -37,7 +37,7 @@ import { <tool> } from '@je-es/ansi';
      * @param {string} str - The input string to strip ANSI escape codes from.
      * @return {string} The input string with ANSI escape codes removed.
     */
-    const removecodess
+    const removeAnsi
     = (str : string)
     : string
     ```
