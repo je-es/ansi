@@ -1,6 +1,8 @@
 # [@je-es/ansi API](./api.md) Codes
 
 ```ts
+import { codes } from '@je-es/ansi';
+
 codes.<group>.<element>;
 ```
 
