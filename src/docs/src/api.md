@@ -13,16 +13,24 @@
     - **Prototype**
 
       ```ts
-      interface   i_style
+      type t_rgb    = [ r : number, g : number, b : number ];
+
+      type t_color  = string | t_rgb;
+
+      type t_attr   = string | string[];
+      ```
+
+      ```ts
+      interface i_style
       {
-          bg              ?: t_color, // string | [r,g,b];
-          fg              ?: t_color, // ..
-          attr            ?: t_attr,  // string | string[]
+          bg              ?: t_color,
+          fg              ?: t_color,
+          attr            ?: t_attr,
       }
       ```
 
       ```ts
-      const       style
+      const style
       = (str: string, options: i_style)
       : string
       ```
